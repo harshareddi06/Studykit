@@ -4,16 +4,6 @@ import { Activity, Calculator, ArrowRight, GraduationCap, Calendar, Award } from
 export default function Home() {
   return (
     <div className="flex-1">
-      {/* Urgent Banner */}
-      <div className="bg-indigo-600 px-4 py-3 text-white sm:flex sm:items-center sm:justify-center sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-medium sm:text-left">
-          🎉 TS & AP EAMCET 2026 Results Out! Check your expected rank now
-          <Link href="/tools/ts-eamcet-rank" className="ml-2 inline-block underline underline-offset-2 hover:text-indigo-100">
-            Check Now &rarr;
-          </Link>
-        </p>
-      </div>
-
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-gray-950 pt-24 pb-16 sm:pt-32 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">

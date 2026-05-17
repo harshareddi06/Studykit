@@ -66,6 +66,13 @@ export default function TSEamcetRankPredictor() {
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">TS EAMCET 2026 Rank Predictor — Results Out Today!</h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">Estimate your Telangana EAPCET rank based on official 2024-2026 data.</p>
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm font-medium text-gray-700 dark:text-gray-300">
+          <span>✅ Free — No login, no registration needed</span>
+          <span className="hidden sm:inline">•</span>
+          <span>✅ Based on 2025 official rank data</span>
+          <span className="hidden sm:inline">•</span>
+          <span>✅ Results in seconds</span>
+        </div>
       </div>
 
       <div className="mb-8 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 p-4 border border-indigo-200 dark:border-indigo-800 text-indigo-800 dark:text-indigo-200 text-center font-medium">
@@ -159,15 +166,14 @@ export default function TSEamcetRankPredictor() {
                   <AlertCircle className="h-4 w-4" /> Based on 100% TS EAMCET weightage trends
                 </p>
                 <div className="mt-6 pt-6 border-t border-cyan-100 dark:border-cyan-900/50">
-                  <button 
-                    onClick={() => {
-                      navigator.clipboard.writeText(`Check your EAMCET rank instantly! Free tool → ${window.location.href}`);
-                      alert("Copied to clipboard!");
-                    }}
-                    className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+                  <a 
+                    href="https://wa.me/?text=Check your EAMCET 2026 rank instantly! Free tool, no login needed → https://studykit.vercel.app/tools/ts-eamcet-rank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300"
                   >
                     <Share2 className="h-4 w-4" /> Share with friends
-                  </button>
+                  </a>
                 </div>
               </div>
 

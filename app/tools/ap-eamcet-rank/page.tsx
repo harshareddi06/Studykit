@@ -5,12 +5,14 @@ import { Calculator, AlertCircle, HelpCircle, Loader2, GraduationCap, Share2 } f
 
 export default function APEamcetRankPredictor() {
   const [score, setScore] = useState<number | "">("");
-  const [ipeMarks, setIpeMarks] = useState<number | "">("");
+  const [inter1, setInter1] = useState<number | "">("");
+  const [inter2, setInter2] = useState<number | "">("");
   const [category, setCategory] = useState("OC/General");
   const [stream, setStream] = useState("MPC");
   
   const [isCalculating, setIsCalculating] = useState(false);
   const [predictedRank, setPredictedRank] = useState<{ min: number; max: number } | null>(null);
+  const [finalScore, setFinalScore] = useState<number | null>(null);
 
   const calculateRank = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,19 +20,28 @@ export default function APEamcetRankPredictor() {
 
     setIsCalculating(true);
     setPredictedRank(null);
+    setFinalScore(null);
 
     setTimeout(() => {
+      let scoreToUse = score;
+      if (typeof inter1 === "number" && typeof inter2 === "number") {
+        scoreToUse = (score * 0.75) + (((inter1 + inter2) / 940) * 160 * 0.25);
+        setFinalScore(scoreToUse);
+      } else {
+        setFinalScore(null);
+      }
+
       let min = 1;
       let max = 500;
 
-      if (score >= 150) { min = 1; max = 500; }
-      else if (score >= 140) { min = 500; max = 2000; }
-      else if (score >= 130) { min = 2000; max = 6000; }
-      else if (score >= 120) { min = 6000; max = 15000; }
-      else if (score >= 110) { min = 15000; max = 30000; }
-      else if (score >= 100) { min = 30000; max = 55000; }
-      else if (score >= 90) { min = 55000; max = 85000; }
-      else if (score >= 80) { min = 85000; max = 120000; }
+      if (scoreToUse >= 150) { min = 1; max = 500; }
+      else if (scoreToUse >= 140) { min = 500; max = 2000; }
+      else if (scoreToUse >= 130) { min = 2000; max = 6000; }
+      else if (scoreToUse >= 120) { min = 6000; max = 15000; }
+      else if (scoreToUse >= 110) { min = 15000; max = 30000; }
+      else if (scoreToUse >= 100) { min = 30000; max = 55000; }
+      else if (scoreToUse >= 90) { min = 55000; max = 85000; }
+      else if (scoreToUse >= 80) { min = 85000; max = 120000; }
       else { min = 120000; max = 200000; }
 
       // Adjust slightly for category just to provide realistic expectations during counseling
@@ -65,6 +76,13 @@ export default function APEamcetRankPredictor() {
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">AP EAMCET 2026 Rank Predictor — Results Out Today!</h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">Estimate your Andhra Pradesh EAPCET rank based on official 2024 data.</p>
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm font-medium text-gray-700 dark:text-gray-300">
+          <span>✅ Free — No login, no registration needed</span>
+          <span className="hidden sm:inline">•</span>
+          <span>✅ Based on 2025 official rank data</span>
+          <span className="hidden sm:inline">•</span>
+          <span>✅ Results in seconds</span>
+        </div>
       </div>
 
       <div className="mb-8 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 p-4 border border-indigo-200 dark:border-indigo-800 text-indigo-800 dark:text-indigo-200 text-center font-medium">
@@ -93,19 +111,34 @@ export default function APEamcetRankPredictor() {
               </div>
 
               <div>
-                <label htmlFor="ipeMarks" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Intermediate/IPE Marks (out of 470)
+                <label htmlFor="inter1" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Inter 1st Year Marks (out of 470)
                 </label>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Optional (AP gives 25% weightage to IPE marks)</p>
                 <input
                   type="number"
-                  id="ipeMarks"
+                  id="inter1"
                   min="0"
                   max="470"
-                  value={ipeMarks}
-                  onChange={(e) => setIpeMarks(e.target.value ? Number(e.target.value) : "")}
+                  value={inter1}
+                  onChange={(e) => setInter1(e.target.value ? Number(e.target.value) : "")}
                   className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
                   placeholder="e.g. 450"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="inter2" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Inter 2nd Year Marks (out of 470)
+                </label>
+                <input
+                  type="number"
+                  id="inter2"
+                  min="0"
+                  max="470"
+                  value={inter2}
+                  onChange={(e) => setInter2(e.target.value ? Number(e.target.value) : "")}
+                  className="w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  placeholder="e.g. 460"
                 />
               </div>
 
@@ -173,16 +206,20 @@ export default function APEamcetRankPredictor() {
                 <p className="mt-6 text-sm text-gray-600 dark:text-gray-400 flex items-center justify-center gap-2 font-medium">
                   <AlertCircle className="h-4 w-4" /> Based on 2024 cutoff data analysis
                 </p>
+                {finalScore !== null && (
+                  <p className="mt-2 text-sm text-indigo-600 dark:text-indigo-400 font-bold">
+                    Your AP Weighted Score (out of 160): {finalScore.toFixed(2)}
+                  </p>
+                )}
                 <div className="mt-6 pt-6 border-t border-cyan-100 dark:border-cyan-900/50">
-                  <button 
-                    onClick={() => {
-                      navigator.clipboard.writeText(`Check your EAMCET rank instantly! Free tool → ${window.location.href}`);
-                      alert("Copied to clipboard!");
-                    }}
-                    className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
+                  <a 
+                    href="https://wa.me/?text=Check your EAMCET 2026 rank instantly! Free tool, no login needed → https://studykit.vercel.app/tools/ap-eamcet-rank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300"
                   >
                     <Share2 className="h-4 w-4" /> Share with friends
-                  </button>
+                  </a>
                 </div>
               </div>
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X, BookOpen } from "lucide-react";
 
@@ -9,6 +10,7 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -24,7 +26,15 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md">
+    <>
+      {pathname === "/" && (
+        <Link href="/tools/ts-eamcet-rank" className="block w-full bg-green-500 hover:bg-green-600 transition-colors px-4 py-3 text-white">
+          <p className="text-center text-sm font-bold">
+            🎉 EAMCET 2026 Results Out Today! Predict Your Rank Instantly — Free, No Login Required &rarr;
+          </p>
+        </Link>
+      )}
+      <nav className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
@@ -104,6 +114,7 @@ export function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+    </>
   );
 }
