@@ -1,101 +1,159 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Activity, Calculator, ArrowRight, GraduationCap, Calendar, Award } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex-1">
+      {/* Urgent Banner */}
+      <div className="bg-indigo-600 px-4 py-3 text-white sm:flex sm:items-center sm:justify-center sm:px-6 lg:px-8">
+        <p className="text-center text-sm font-medium sm:text-left">
+          🎉 TS & AP EAMCET 2026 Results Out! Check your expected rank now
+          <Link href="/tools/ts-eamcet-rank" className="ml-2 inline-block underline underline-offset-2 hover:text-indigo-100">
+            Check Now &rarr;
+          </Link>
+        </p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-white dark:bg-gray-950 pt-24 pb-16 sm:pt-32 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-7xl">
+            Smarter tools for your{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-cyan-500">
+              academic journey
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-gray-600 dark:text-gray-400">
+            Take the guesswork out of your admissions. Use our accurate, data-driven rank predictors for NEET and EAMCET to plan your future with confidence. <span className="font-semibold text-indigo-600 dark:text-indigo-400">100% Free — No mobile number verification required.</span>
+          </p>
+          <div className="mt-10 flex justify-center gap-x-6">
+            <Link href="#tools" className="btn-primary flex items-center gap-2 px-6 py-3 text-base">
+              Explore Tools <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Tools Grid Section */}
+      <section id="tools" className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-base font-semibold leading-7 text-indigo-600 dark:text-indigo-400">Essential Toolkit</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+              Everything you need to predict your rank
+            </p>
+          </div>
+
+          <div className="mx-auto mt-16 max-w-7xl sm:mt-20">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {/* NEET Tool Card */}
+              <Link href="/tools/neet-rank" className="card group relative overflow-hidden p-8 flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="rounded-lg bg-indigo-50 dark:bg-indigo-900/30 p-3 ring-1 ring-indigo-200 dark:ring-indigo-800">
+                    <Activity className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">NEET Predictor</h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 flex-1 mb-8">
+                  Predict your All India Rank (AIR) and check out expected college tiers based on previous years&apos; cutoffs.
+                </p>
+                <div className="flex items-center text-sm font-semibold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-500 transition-colors">
+                  Try it out <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </Link>
+
+              {/* TS EAMCET Tool Card */}
+              <Link href="/tools/ts-eamcet-rank" className="card group relative overflow-hidden p-8 flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="rounded-lg bg-cyan-50 dark:bg-cyan-900/30 p-3 ring-1 ring-cyan-200 dark:ring-cyan-800">
+                    <Calculator className="h-8 w-8 text-cyan-600 dark:text-cyan-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">TS EAMCET Predictor</h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 flex-1 mb-8">
+                  Estimate your TS EAPCET rank for Engineering and Agriculture/Pharmacy streams based on 2024-2025 data.
+                </p>
+                <div className="flex items-center text-sm font-semibold text-cyan-600 dark:text-cyan-400 group-hover:text-cyan-500 transition-colors">
+                  Try it out <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </Link>
+
+              {/* AP EAMCET Tool Card */}
+              <Link href="/tools/ap-eamcet-rank" className="card group relative overflow-hidden p-8 flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="rounded-lg bg-blue-50 dark:bg-blue-900/30 p-3 ring-1 ring-blue-200 dark:ring-blue-800">
+                    <Calculator className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white">AP EAMCET Predictor</h3>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 flex-1 mb-8">
+                  Estimate your AP EAPCET rank with our advanced calculator that considers your 25% IPE weightage.
+                </p>
+                <div className="flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400 group-hover:text-blue-500 transition-colors">
+                  Try it out <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Coming Soon Section */}
+      <section className="py-16 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center mb-12">
+            <h2 className="text-base font-semibold leading-7 text-purple-600 dark:text-purple-400">Future Updates</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Coming Soon to StudyKit
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "College Predictor (EAMCET)",
+                desc: "Find colleges you can get based on your rank",
+                icon: <GraduationCap className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+              },
+              {
+                title: "JEE Rank Predictor",
+                desc: "Predict your JEE Main rank",
+                icon: <Activity className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+              },
+              {
+                title: "CGPA Calculator",
+                desc: "Calculate your semester GPA",
+                icon: <Calculator className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+              },
+              {
+                title: "Attendance Calculator",
+                desc: "Check if you can skip more classes",
+                icon: <Calendar className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+              },
+              {
+                title: "Scholarship Finder",
+                desc: "Find scholarships you are eligible for",
+                icon: <Award className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+              }
+            ].map((tool, i) => (
+              <div key={i} className="card relative overflow-hidden p-6 flex flex-col opacity-50 grayscale select-none border border-gray-200 dark:border-gray-700">
+                <div className="absolute top-4 right-4 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold px-2.5 py-1 rounded-full ring-1 ring-purple-200 dark:ring-purple-800">
+                  Coming Soon
+                </div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="rounded-lg bg-gray-100 dark:bg-gray-800 p-2 ring-1 ring-gray-200 dark:ring-gray-700">
+                    {tool.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white pr-20">{tool.title}</h3>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  {tool.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
