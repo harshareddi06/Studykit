@@ -1,0 +1,25 @@
+{
+  "exam": "TG EAPCET",
+  "year": 2025,
+  "authority": "JNTUH / TGCHE",
+  "totalMarks": 160,
+  "formula": "100% normalized EAMCET marks only (IPE removed from 2025)",
+  "source": "TG EAPCET 2025 Official Normalized Marks vs Rank",
+  "qualifyingMarks": { "general": 40, "bc": 40, "sc_st": 0 },
+  "engineering": [
+    { "marksMin": 155, "marksMax": 160, "rankMin": 1,      "rankMax": 50,    "confidence": "high" },
+    { "marksMin": 150, "marksMax": 154, "rankMin": 51,     "rankMax": 200,   "confidence": "high" },
+    { "marksMin": 140, "marksMax": 149, "rankMin": 201,    "rankMax": 800,   "confidence": "high" },
+    { "marksMin": 130, "marksMax": 139, "rankMin": 801,    "rankMax": 2000,  "confidence": "high" },
+    { "marksMin": 120, "marksMax": 129, "rankMin": 2001,   "rankMax": 4000,  "confidence": "high" },
+    { "marksMin": 110, "marksMax": 119, "rankMin": 4001,   "rankMax": 6000,  "confidence": "high" },
+    { "marksMin": 100, "marksMax": 109, "rankMin": 6001,   "rankMax": 10000, "confidence": "high" },
+    { "marksMin": 90,  "marksMax": 99,  "rankMin": 10001,  "rankMax": 18000, "confidence": "high" },
+    { "marksMin": 80,  "marksMax": 89,  "rankMin": 18001,  "rankMax": 26130, "confidence": "high" },
+    { "marksMin": 70,  "marksMax": 79,  "rankMin": 26131,  "rankMax": 61040, "confidence": "medium" },
+    { "marksMin": 60,  "marksMax": 69,  "rankMin": 61041,  "rankMax": 92270, "confidence": "medium" },
+    { "marksMin": 50,  "marksMax": 59,  "rankMin": 92271,  "rankMax": 240290,"confidence": "low" },
+    { "marksMin": 40,  "marksMax": 49,  "rankMin": 240291, "rankMax": 441210,"confidence": "low" },
+    { "marksMin": 0,   "marksMax": 39,  "rankMin": 441211, "rankMax": 600000,"confidence": "low" }
+  ]
+}

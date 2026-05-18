@@ -1,0 +1,24 @@
+{
+  "exam": "AP EAPCET",
+  "year": 2025,
+  "authority": "JNTU Kakinada / APSCHE",
+  "totalMarks": 160,
+  "formula": "75% normalized EAMCET marks + 25% IPE/10+2 marks",
+  "source": "Official AP EAPCET 2025 Instruction Booklet",
+  "qualifyingMarks": { "general": 40, "sc_st": 0 },
+  "engineering": [
+    { "marksMin": 150, "marksMax": 160, "rankMin": 1,     "rankMax": 1000,  "confidence": "high" },
+    { "marksMin": 140, "marksMax": 149, "rankMin": 1001,  "rankMax": 1500,  "confidence": "high" },
+    { "marksMin": 130, "marksMax": 139, "rankMin": 1501,  "rankMax": 2000,  "confidence": "high" },
+    { "marksMin": 120, "marksMax": 129, "rankMin": 2001,  "rankMax": 4000,  "confidence": "high" },
+    { "marksMin": 110, "marksMax": 119, "rankMin": 4001,  "rankMax": 6000,  "confidence": "high" },
+    { "marksMin": 100, "marksMax": 109, "rankMin": 6001,  "rankMax": 8000,  "confidence": "medium" },
+    { "marksMin": 90,  "marksMax": 99,  "rankMin": 8001,  "rankMax": 12000, "confidence": "medium" },
+    { "marksMin": 80,  "marksMax": 89,  "rankMin": 12001, "rankMax": 18000, "confidence": "medium" },
+    { "marksMin": 70,  "marksMax": 79,  "rankMin": 15001, "rankMax": 20000, "confidence": "medium" },
+    { "marksMin": 60,  "marksMax": 69,  "rankMin": 20001, "rankMax": 35000, "confidence": "low" },
+    { "marksMin": 50,  "marksMax": 59,  "rankMin": 35001, "rankMax": 60000, "confidence": "low" },
+    { "marksMin": 40,  "marksMax": 49,  "rankMin": 60001, "rankMax": 90000, "confidence": "low" },
+    { "marksMin": 0,   "marksMax": 39,  "rankMin": 90001, "rankMax": 160000,"confidence": "low" }
+  ]
+}

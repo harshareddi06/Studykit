@@ -8,6 +8,24 @@ import { Footer } from '@/components/layout/Footer'
 export const metadata: Metadata = {
   title: 'StudyKit — Free Tools for Students',
   description: 'Free rank predictors and calculators for Indian students',
+  keywords: [
+    'AP EAMCET rank predictor 2026',
+    'TS EAMCET rank predictor 2026', 
+    'TG EAPCET rank estimator',
+    'AP EAPCET rank estimator free',
+    'EAMCET rank from marks',
+    'free rank predictor no login',
+    'AP EAMCET marks vs rank 2026',
+    'TS EAMCET marks vs rank 2026',
+    'EAMCET college predictor',
+    'NEET rank predictor India',
+  ],
+  openGraph: {
+    title: 'StudyKit — Free EAMCET & NEET Rank Predictors',
+    description: 'Free rank predictors for AP EAMCET, TS EAMCET and NEET. No login required. Based on official 2025 data.',
+    type: 'website',
+    locale: 'en_IN',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

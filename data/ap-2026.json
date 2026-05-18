@@ -1,0 +1,27 @@
+{
+  "exam": "AP EAPCET",
+  "year": 2026,
+  "authority": "JNTU Kakinada / APSCHE",
+  "totalMarks": 160,
+  "formula": "75% normalized EAPCET marks + 25% Intermediate group subject marks",
+  "ipeGroupMaxMarks": 600,
+  "source": "Official AP EAPCET 2026 Instruction Booklet V4",
+  "officialBookletUrl": "https://cets.apsche.ap.gov.in/EAPCET/PDF/APEAPCET2026_Instruction_Booklet_Engineering_V4.pdf",
+  "qualifyingMarks": { "general": 40, "obc_bc": 40, "sc_st": 0 },
+  "note": "Category does NOT affect rank formula. Category only affects seat allotment during counseling.",
+  "engineering": [
+    { "marksMin": 150, "marksMax": 160, "rankMin": 1,     "rankMax": 1000,  "confidence": "high",   "meritEquiv": "88-100" },
+    { "marksMin": 140, "marksMax": 149, "rankMin": 1001,  "rankMax": 1500,  "confidence": "high",   "meritEquiv": "80-87" },
+    { "marksMin": 130, "marksMax": 139, "rankMin": 1501,  "rankMax": 2000,  "confidence": "high",   "meritEquiv": "73-79" },
+    { "marksMin": 120, "marksMax": 129, "rankMin": 2001,  "rankMax": 4000,  "confidence": "high",   "meritEquiv": "66-72" },
+    { "marksMin": 110, "marksMax": 119, "rankMin": 4001,  "rankMax": 6000,  "confidence": "high",   "meritEquiv": "59-65" },
+    { "marksMin": 100, "marksMax": 109, "rankMin": 6001,  "rankMax": 8000,  "confidence": "medium", "meritEquiv": "53-58" },
+    { "marksMin": 90,  "marksMax": 99,  "rankMin": 8001,  "rankMax": 12000, "confidence": "medium", "meritEquiv": "47-52" },
+    { "marksMin": 80,  "marksMax": 89,  "rankMin": 12001, "rankMax": 18000, "confidence": "medium", "meritEquiv": "41-46" },
+    { "marksMin": 70,  "marksMax": 79,  "rankMin": 18001, "rankMax": 25000, "confidence": "medium", "meritEquiv": "35-40" },
+    { "marksMin": 60,  "marksMax": 69,  "rankMin": 25001, "rankMax": 40000, "confidence": "low",    "meritEquiv": "29-34" },
+    { "marksMin": 50,  "marksMax": 59,  "rankMin": 40001, "rankMax": 65000, "confidence": "low",    "meritEquiv": "24-28" },
+    { "marksMin": 40,  "marksMax": 49,  "rankMin": 65001, "rankMax": 95000, "confidence": "low",    "meritEquiv": "18-23" },
+    { "marksMin": 0,   "marksMax": 39,  "rankMin": 95001, "rankMax": 180000,"confidence": "low",    "meritEquiv": "0-17"  }
+  ]
+}
